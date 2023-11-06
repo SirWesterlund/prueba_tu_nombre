@@ -1,0 +1,52 @@
+{
+ "Dhcp4": {
+    "interfaces-config": {
+    "interfaces": [ "enp0s3" ]
+    },
+    "control-socket": {
+      "socket-type": "unix",
+      "socket-name": "/tmp/kea4-ctrl-socket"
+    },
+    "lease-database": {
+      "type": "memfile",
+      "lfc-interval": 3600
+    },
+    "valid-lifetime": 600,
+    "max-valid-lifetime": 7200,
+    "subnet4": [
+      {
+        "id": 1,
+        "subnet": "192.168.10.12/24",
+        "pools": [
+          {
+            "pool": "192.168.10.11 - 192.168.10.200"
+          }
+          ],
+        "reservations": [
+
+          {
+            "hw-address": "36:75:fa:76:31:8d",
+            "ip-address": "192.168.10.201"
+          }
+
+        ],
+        "option-data": [
+          {
+            "name": "routers",
+            "data": "192.168.10.254"
+          },
+          {
+            "name": "domain-name-servers",
+            "data": "10.239.3.7, 10.239.3.8"
+	  },
+          {
+            "name": "domain-name",
+	    "data": "david.example.com, example.com"
+          }
+	  ]
+
+    }
+    ]
+  }
+}
+       
