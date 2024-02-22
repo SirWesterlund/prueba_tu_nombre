@@ -31,7 +31,7 @@
 
                 mysqli_close($conexion);
             } else {
-                // Mostrar mensaje de confirmación
+          
                 echo '<h2>¿Estás seguro de eliminar este empleado?</h2>';
                 echo '<form method="post">
                         <button type="submit" name="confirmar_borrado" class="btn btn-danger">Sí, estoy seguro</button>
@@ -45,11 +45,11 @@
     </div>
 
     <script>
-        // JavaScript para mostrar mensaje de confirmación
+ 
         document.addEventListener('DOMContentLoaded', function () {
             document.querySelector('form').addEventListener('submit', function (e) {
                 if (!confirm('¿Estás seguro de eliminar este empleado?')) {
-                    e.preventDefault(); // Cancela el envío del formulario si el usuario hace clic en "No"
+                    e.preventDefault(); 
                 }
             });
         });
