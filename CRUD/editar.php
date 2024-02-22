@@ -30,13 +30,12 @@
                 $nuevo_telefono = mysqli_real_escape_string($conexion, $_POST["nuevo_telefono"]);
                 $nuevo_puesto = mysqli_real_escape_string($conexion, $_POST["nuevo_puesto"]);
 
-                // Restricción para el número de teléfono
+            
                 if (!preg_match("/^[0-9]{9}$/", $nuevo_telefono)) {
                     echo "El número de teléfono debe contener 9 dígitos.";
                     exit;
                 }
 
-                // Restricción para el DNI
                 if (!preg_match("/^[0-9]{8}[A-Za-z]$/", $nuevo_dni)) {
                     echo "El DNI debe contener 8 dígitos seguidos de una letra.";
                     exit;
@@ -146,7 +145,6 @@
         }
         ?>
 
-        <!-- Botón para volver al índice -->
         <a href="index.php" class="btn btn-secondary mt-3">Volver al Listado</a>
 
     </div>
